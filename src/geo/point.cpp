@@ -49,7 +49,7 @@ namespace geo {
 
 }
 
-std::ostream & operator<< (std::ostream &out, data::Point const & p)
+std::ostream & operator<< (std::ostream &out, geo::Point const & p)
 {
     p.print(out);
     return out;

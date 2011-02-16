@@ -1,8 +1,9 @@
+#include <iostream>
 #include <boost/ref.hpp>
 
-#include "canva.hpp"
+#include "canvas.hpp"
 
-namespace eculid {
+namespace euclid {
 
     Canvas::Canvas ()
         :   term(false),
@@ -13,14 +14,22 @@ namespace eculid {
 
     void Canvas::stop ()
     {
+        term = true;
     }
 
     Canvas::~Canvas ()
     {
+        stop();
+        updater.join();
     }
 
-    void operator() ()
+    void Canvas::operator() ()
     {
+        while (!term) {
+            before();
+            std::cout << "redraw!" << std::endl;
+            after();
+        }
     }
 
 }

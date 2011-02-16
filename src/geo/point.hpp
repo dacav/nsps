@@ -36,6 +36,6 @@ namespace geo {
 
 }
 
-std::ostream & operator<< (std::ostream &out, data::Point const & p);
+std::ostream & operator<< (std::ostream &out, geo::Point const & p);
 
 #endif // __defined_point_hpp

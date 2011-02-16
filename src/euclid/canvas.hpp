@@ -3,7 +3,7 @@
 
 #include <boost/thread.hpp>
 
-namespace eculid {
+namespace euclid {
 
     class Canvas
     {
@@ -12,21 +12,30 @@ namespace eculid {
             virtual ~Canvas ();
 
             void stop ();
+            void operator() ();
 
         private:
             bool term;
             bool updated;
 
-            friend boost::thread;
             boost::thread updater;
 
-            //boost::condition_variable sync;
+            /** Before redrawing.
+             *
+             * By default the method does nothing. Overload if required.
+             *
+             * @note This methond may be used to catch user events on the
+             *       canvas (like mouse clicks or gestures).
+             */
+            virtual void before () {};
 
-            /* Implementation depending on specific canvas to be used */
-            virtual void redraw () = 0;
+            /** After redrawing.
+             *
+             * By default the method does nothing. Overload if required.
+             */
+             virtual void after () {};
 
-            void operator() ();
-    }
+    };
 
 }
 
