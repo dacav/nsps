@@ -1,10 +1,12 @@
 #!/bin/sh
 
-rm -f config.cache
-libtoolize && 
-aclocal &&
-autoconf &&
-autoheader &&
-automake -a &&
+#rm -f config.cache
+#libtoolize && 
+#aclocal &&
+#autoconf &&
+#autoheader &&
+#automake -a &&
+
+autoreconf --install
 
 exit

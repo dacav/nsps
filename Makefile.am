@@ -1,4 +1,4 @@
-# Copyright (C) 2010 Giovanni [dacav] Simoni
+# Copyright (C) 2011 Giovanni [dacav] Simoni
 #                    <dacav@roundhousecode.com>
 #
 # This program is free software; you can redistribute it and/or
